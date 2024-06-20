@@ -1,0 +1,159 @@
+/* Body and container styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* Main content area styles */
+main {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #fff;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar ul li.active {
+  background-color: #d3f3ff;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Styling for each section */
+.patient-info,
+.diagnosis-history,
+.diagnostic-list,
+.lab-results {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.patient-info {
+  text-align: center;
+}
+
+.patient-info img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.diagnosis-history h2 {
+  text-align: center;
+}
+
+.blood-pressure-chart__container {
+  margin-bottom: 20px;
+}
+
+.vitals {
+  display: flex;
+  justify-content: space-around;
+}
+
+.vital {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  flex: 1;
+  margin: 5px;
+}
+
+.vital img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Table styles for diagnostic list */
+#diagnostic-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-y: auto;
+  max-height: 160px; /* Adjust max height as needed */
+}
+
+#diagnostic-table td {
+  padding: 10px;
+  text-align: left;
+  border: none; /* Remove borders between cells */
+  background-color: #ffffff;
+}
+
+#diagnostic-table .first-row td {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
