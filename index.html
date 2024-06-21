@@ -4,73 +4,121 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patient Data API</title>
-    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
+
   <body>
-    <div class="container">
-      <header>
-        <div class="logo">Tech.Care</div>
-        <nav>
-          <ul>
-            <li><a href="#">Overview</a></li>
-            <li><a href="#">Patients</a></li>
-            <li><a href="#">Schedule</a></li>
-            <li><a href="#">Message</a></li>
-            <li><a href="#">Transactions</a></li>
-          </ul>
-        </nav>
-        <div class="profile">
-          <img src="profile-pic.jpg" alt="Dr. Jose Simmons" />
-          <span>Dr. Jose Simmons</span>
+    <header>
+      <div class="logo-container">
+        <div class="logo"></div>
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <div class="overview">
+              <span class="overview-icon"></span>
+              <a href="#" class="body-emphasized-14pt">Overview</a>
+            </div>
+          </li>
+          <li>
+            <div class="patients">
+              <span class="patients-icon"></span>
+              <a href="#" class="body-emphasized-14pt">Patients</a>
+            </div>
+          </li>
+          <li>
+            <div class="schedule">
+              <span class="schedule-icon"></span
+              ><a href="#" class="body-emphasized-14pt">Schedule</a>
+            </div>
+          </li>
+          <li>
+            <div class="message">
+              <span class="message-icon"></span
+              ><a href="#" class="body-emphasized-14pt">Message</a>
+            </div>
+          </li>
+          <li>
+            <div class="transactions">
+              <span class="transactions-icon"></span
+              ><a href="#" class="body-emphasized-14pt">Transactions</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="profile">
+        <img
+          src="/assets/img/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png"
+          alt="Dr. Jose Simmons"
+        />
+        <div class="profile-content">
+          <p class="body-emphasized-14pt">Dr. Jose Simmons</p>
+          <span class="body-secondary-info-14pt">General Practitioner</span>
         </div>
-      </header>
-      <main>
-        <aside class="sidebar">
-          <h2>Patients</h2>
-          <ul id="patient-list">
-            <!-- Patient list will be populated here -->
+      </div>
+
+      <div class="settings-container">
+        <img
+          class="settings-gear"
+          src="assets/img/settings_FILL0_wght300_GRAD0_opsz24.png"
+          alt="Settings Gear"
+        />
+        <img
+          class="settings-dots"
+          src="assets/img/more_vert_FILL0_wght300_GRAD0_opsz24.png"
+          alt="Settings Dots"
+        />
+      </div>
+    </header>
+
+    <main>
+      <aside class="sidebar">
+        <h2 class="card-title-24pt">Patients</h2>
+        <ul id="patient-list">
+          <!-- Patient list will be populated here -->
+        </ul>
+      </aside>
+      <section class="content">
+        <div class="patient-info">
+          <img
+            id="profile-picture"
+            src="profile-pic.jpg"
+            alt="Profile Picture"
+          />
+          <h2 id="patient-name" class="inner-card-title-18pt"></h2>
+          <p id="patient-dob" class="body-secondary-info-14pt"></p>
+          <p id="patient-gender" class="body-secondary-info-14pt"></p>
+          <p id="patient-phone" class="body-secondary-info-14pt"></p>
+          <p id="emergency-contact" class="body-secondary-info-14pt"></p>
+          <p id="insurance-type" class="body-secondary-info-14pt"></p>
+        </div>
+        <div class="diagnosis-history">
+          <h2 class="inner-card-title-18pt">Diagnosis History</h2>
+          <div class="blood-pressure-chart__container">
+            <h3 class="body-emphasized-14pt">Blood Pressure</h3>
+            <canvas id="bloodPressure-chart"></canvas>
+          </div>
+          <div class="vitals">
+            <!-- Vitals will be populated here -->
+          </div>
+        </div>
+        <div class="diagnostic-list">
+          <h2 class="inner-card-title-18pt">Diagnostic List</h2>
+          <table id="diagnostic-table">
+            <!-- Diagnostics will be populated here -->
+          </table>
+        </div>
+        <div class="lab-results">
+          <h2 class="inner-card-title-18pt">Lab Results</h2>
+          <ul id="lab-results-list">
+            <!-- Lab results will be populated here -->
           </ul>
-        </aside>
-        <section class="content">
-          <div class="patient-info">
-            <img
-              id="profile-picture"
-              src="profile-pic.jpg"
-              alt="Profile Picture"
-            />
-            <h2 id="patient-name"></h2>
-            <p id="patient-dob"></p>
-            <p id="patient-gender"></p>
-            <p id="patient-phone"></p>
-            <p id="emergency-contact"></p>
-            <p id="insurance-type"></p>
-          </div>
-          <div class="diagnosis-history">
-            <h2>Diagnosis History</h2>
-            <div class="blood-pressure-chart__container">
-              <h3>Blood Pressure</h3>
-              <canvas id="bloodPressure-chart"></canvas>
-            </div>
-            <div class="vitals">
-              <!-- I created the vitals using JavaScript to demonstrate an alternative approach (see script.js: 'Update vital signs') -->
-            </div>
-          </div>
-          <div class="diagnostic-list">
-            <h2>Diagnostic List</h2>
-            <table id="diagnostic-table">
-              <!-- Diagnostics will be populated here -->
-            </table>
-          </div>
-          <div class="lab-results">
-            <h2>Lab Results</h2>
-            <ul id="lab-results-list">
-              <!-- Lab results will be populated here -->
-            </ul>
-          </div>
-        </section>
-      </main>
-    </div>
-    <script src="script.js"></script>
+        </div>
+      </section>
+    </main>
+    <script src="/assets/js/script.js"></script>
   </body>
 </html>

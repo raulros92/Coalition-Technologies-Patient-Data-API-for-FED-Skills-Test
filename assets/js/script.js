@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //  Credentials for authentication
+  // Credentials for authentication
   const username = "coalition";
   const pswd = "skills-test";
   const authHeader = "Basic " + btoa(`${username}:${pswd}`);
@@ -21,14 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
   async function updateDOM() {
     const patientData = await fetchPatientData();
 
-    //  Updating the DOM with Patient Data
+    // Function to format date
+    function formatDate(dateString) {
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      return new Date(dateString).toLocaleDateString("en-US", options);
+    }
+
+    // Updating the DOM with Patient Data
     document.getElementById("profile-picture").src =
       patientData.profile_picture;
     document.getElementById("patient-name").textContent = patientData.name;
     document.getElementById("patient-dob").textContent =
-      `Date of Birth: ${new Date(
-        patientData.date_of_birth
-      ).toLocaleDateString()}`;
+      `Date of Birth: ${formatDate(patientData.date_of_birth)}`;
     document.getElementById("patient-gender").textContent =
       `Gender: ${patientData.gender}`;
     document.getElementById("patient-phone").textContent =
@@ -73,15 +77,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const title = document.createElement("p");
       title.textContent = vital.name;
+      title.classList.add("body-emphasized-14pt");
       vitalDiv.appendChild(title);
 
       const value = document.createElement("p");
-      value.classList.add("value");
+      value.classList.add("value", "body-regular-14");
       value.textContent = vital.value;
       vitalDiv.appendChild(value);
 
       const level = document.createElement("p");
-      level.classList.add("level");
+      level.classList.add("level", "body-regular-14");
       level.textContent = vital.level;
       vitalDiv.appendChild(level);
 
@@ -125,6 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
     labResultsContainer.innerHTML = "";
     labResults.forEach((result) => {
       const li = document.createElement("li");
+      li.classList.add("body-regular-14");
       li.textContent = result;
       labResultsContainer.appendChild(li);
     });
@@ -148,21 +154,25 @@ document.addEventListener("DOMContentLoaded", () => {
           {
             label: "Systolic",
             data: systolicData,
-            borderColor: "rgba(255, 99, 132, 1)",
-            borderWidth: 1,
+            borderColor: "#E66FD2",
+            borderWidth: 2,
             fill: false,
           },
           {
             label: "Diastolic",
             data: diastolicData,
-            borderColor: "rgba(54, 162, 235, 1)",
-            borderWidth: 1,
+            borderColor: "#8C6FE6",
+            borderWidth: 2,
             fill: false,
           },
         ],
       },
       options: {
+        responsive: true,
         scales: {
+          x: {
+            beginAtZero: true,
+          },
           y: {
             beginAtZero: true,
           },
