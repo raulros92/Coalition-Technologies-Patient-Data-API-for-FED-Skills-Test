@@ -75,13 +75,50 @@
     </header>
 
     <main>
-      <aside class="sidebar">
-        <h2 class="card-title-24pt">Patients</h2>
+      <aside class="sidebar-patients">
+        <div class="patients-title__container">
+          <h2 class="card-title-24pt">Patients</h2>
+          <img
+            class="search-icon"
+            src="/assets/img/search_FILL0_wght300_GRAD0_opsz24.svg"
+            alt="Search Icon"
+          />
+        </div>
         <ul id="patient-list">
           <!-- Patient list will be populated here -->
         </ul>
       </aside>
-      <section class="content">
+      <section class="content-patient">
+        <div class="diagnosis-history">
+          <h2 class="Card Title 24pt">Diagnosis History</h2>
+          <div class="blood-pressure-chart__container">
+            <div class="blood-pressure-chart__details">
+              <div class="blood-pressure-chart__title-container">
+                <h3 class="Inner Card Title 18pt">Blood Pressure</h3>
+                <select id="timeRange" class="body-regular-14">
+                  <option value="6 months">Last 6 months</option>
+                  <option value="1 year">Last year</option>
+                  <option value="2 years">Last 2 years</option>
+                </select>
+              </div>
+              <canvas id="bloodPressure-chart"></canvas>
+            </div>
+            <div class="blood-pressure-data">
+              <!-- blood-pressure-data will be populated here -->
+            </div>
+          </div>
+          <div class="vitals">
+            <!-- Vitals will be populated here -->
+          </div>
+        </div>
+        <div class="diagnostic-list">
+          <h2 class="inner-card-title-18pt">Diagnostic List</h2>
+          <table id="diagnostic-table">
+            <!-- Diagnostics will be populated here -->
+          </table>
+        </div>
+      </section>
+      <section class="sidebar-patient">
         <div class="patient-info">
           <img
             id="profile-picture"
@@ -94,22 +131,6 @@
           <p id="patient-phone" class="body-secondary-info-14pt"></p>
           <p id="emergency-contact" class="body-secondary-info-14pt"></p>
           <p id="insurance-type" class="body-secondary-info-14pt"></p>
-        </div>
-        <div class="diagnosis-history">
-          <h2 class="inner-card-title-18pt">Diagnosis History</h2>
-          <div class="blood-pressure-chart__container">
-            <h3 class="body-emphasized-14pt">Blood Pressure</h3>
-            <canvas id="bloodPressure-chart"></canvas>
-          </div>
-          <div class="vitals">
-            <!-- Vitals will be populated here -->
-          </div>
-        </div>
-        <div class="diagnostic-list">
-          <h2 class="inner-card-title-18pt">Diagnostic List</h2>
-          <table id="diagnostic-table">
-            <!-- Diagnostics will be populated here -->
-          </table>
         </div>
         <div class="lab-results">
           <h2 class="inner-card-title-18pt">Lab Results</h2>

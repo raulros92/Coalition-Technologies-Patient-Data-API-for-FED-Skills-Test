@@ -90,6 +90,7 @@ body {
   margin: 0;
   padding: 18px 18px 0px 18px;
   background-color: #ffffff;
+  width: 100%;
 }
 
 /* Header styles */
@@ -98,6 +99,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
+  margin-bottom: 32px;
 }
 
 .logo-container {
@@ -286,17 +288,6 @@ main {
   overflow-y: auto;
 }
 
-/* Styling for each section */
-.patient-info,
-.diagnosis-history,
-.diagnostic-list,
-.lab-results {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-
 .patient-info {
   text-align: center;
 }
@@ -308,11 +299,53 @@ main {
 }
 
 .diagnosis-history h2 {
-  text-align: center;
+  margin-bottom: 56px;
 }
 
 .blood-pressure-chart__container {
   margin-bottom: 20px;
+  display: flex;
+}
+
+.blood-pressure-chart__details {
+  margin-right: 20px;
+}
+
+.blood-pressure-chart__title-container {
+  align-items: baseline;
+}
+
+.blood-pressure-chart__title-container h3 {
+  padding-left: 30px;
+}
+
+#timeRange {
+  border: none;
+}
+
+#bloodPressure-chart {
+  width: 417px;
+  height: 187px;
+}
+
+.blood-pressure-data {
+  padding-top: 30px;
+}
+
+.legend-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.blood-pressure-data-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .vitals {
@@ -334,18 +367,37 @@ main {
   height: 50px;
 }
 
+/* Patients */
+
+.sidebar-patients {
+  width: 367px;
+  height: 1054px;
+}
+
+.patients-title__container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 72px;
+}
+
+.blood-pressure-chart__title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Table styles for diagnostic list */
 #diagnostic-table {
   width: 100%;
   border-collapse: collapse;
   overflow-y: auto;
-  max-height: 160px; /* Adjust max height as needed */
+  max-height: 160px;
 }
 
 #diagnostic-table td {
   padding: 10px;
   text-align: left;
-  border: none; /* Remove borders between cells */
+  border: none;
   background-color: #ffffff;
 }
 
