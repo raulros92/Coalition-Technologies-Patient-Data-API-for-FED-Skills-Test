@@ -39,7 +39,6 @@
 .card-title-24pt {
   font-family: var(--unnamed-font-family-manrope);
   font-style: var(--unnamed-font-style-normal);
-  font-weight: var(--unnamed-font-weight-800);
   font-size: var(--unnamed-font-size-24);
   line-height: var(--unnamed-line-spacing-33);
   letter-spacing: var(--unnamed-character-spacing-0);
@@ -115,7 +114,7 @@ body {
   font-family: var(--font-family-manrope);
   margin: 0;
   padding: 18px 18px 0px 18px;
-  background-color: #ffffff;
+  background-color: #f6f7f8;
   width: 100%;
   overflow-x: hidden;
 }
@@ -164,6 +163,12 @@ nav ul li a {
   color: var(--color-072635);
 }
 
+.selected {
+  background-color: var(--activestate_bg_1);
+  padding: 11px 16px;
+  border-radius: 41px;
+}
+
 .overview {
   display: flex;
   gap: 9px;
@@ -184,9 +189,6 @@ nav ul li a {
 /* Use JS to create a class for selected LI and apply properties - bg-color etc. */
 .patients {
   display: flex;
-  background-color: var(--activestate_bg_1);
-  padding: 11px 16px;
-  border-radius: 41px;
   gap: 9px;
 }
 
@@ -315,25 +317,84 @@ main {
   overflow-y: auto;
 }
 
-.patient-info {
-  text-align: center;
-}
-
-.patient-info img {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+.content-patient {
+  background-color: #ffffff;
+  margin: 20px;
+  padding: 20px;
 }
 
 .diagnosis-history h2 {
   margin-bottom: 56px;
 }
 
+/* Selected Patient */
+
+.sidebar-selected-patient {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.selected-patient-info {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.patient-detail {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+#patient-name {
+  align-self: center;
+}
+
+.detail-icon {
+  width: 42px;
+  height: 42px;
+  margin-right: 10px;
+}
+
+.selected-patient__profile-picture {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.text-container .body-secondary-info-14pt {
+  margin: 0;
+}
+
+.text-container .body-emphasized-14pt {
+  margin: 0;
+}
+
+.show-all-info-button {
+  font-family: var(--unnamed-font-family-manrope);
+  font-weight: var(--unnamed-font-weight-bold);
+  font-size: var(--unnamed-font-size-14);
+  color: var(--unnamed-color-072635);
+  background-color: var(--activestate_bg_1);
+  border: none;
+  border-radius: 41px;
+  padding: 11px 40px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
 /* Blood-pressure Chart */
 
 .blood-pressure-chart__container {
   margin-bottom: 20px;
-  margin-right: 21px;
   padding: 10px;
   display: flex;
   background-color: #f4f0fe;
@@ -402,11 +463,13 @@ main {
 
 .vitals-title {
   font-size: 16px;
+  margin: 5px;
 }
 
 .vitals-value {
   font-size: 30px;
   font-weight: 800;
+  margin-top: 0;
 }
 
 .vital:nth-child(1) {
@@ -417,15 +480,15 @@ main {
 }
 .vital:nth-child(3) {
   background-color: #ffe6f1;
+  margin-right: 0;
 }
 
 /* Patients */
 
 .sidebar-patients {
-  width: 367px;
+  width: 325px;
   height: 1054px;
   margin-left: 18px;
-  margin-right: 32px;
   overflow-y: auto;
   background-color: #ffffff;
 }
@@ -483,7 +546,7 @@ main {
   background-color: var(--activestate_bg_2);
 }
 
-/* Table styles for diagnostic list */
+/* Diagnostic list */
 #diagnostic-table {
   width: 100%;
   border-collapse: collapse;
@@ -491,14 +554,48 @@ main {
   max-height: 160px;
 }
 
+#diagnostic-table th,
 #diagnostic-table td {
+  font-family: var(--unnamed-font-family-manrope);
+  font-size: 14px;
   padding: 10px;
   text-align: left;
   border: none;
   background-color: #ffffff;
 }
 
-#diagnostic-table .first-row td {
+#diagnostic-table th {
   background-color: #f0f0f0;
-  font-weight: bold;
+}
+
+/* Lab results */
+
+.lab-results {
+  margin-top: 20px;
+  width: 90%;
+}
+
+.lab-results ul {
+  list-style-type: none;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.lab-results li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.lab-results .body-regular-14pt {
+  font-family: var(--unnamed-font-family-manrope);
+  font-size: 13px;
+}
+
+.lab-results .download-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  cursor: pointer;
 }

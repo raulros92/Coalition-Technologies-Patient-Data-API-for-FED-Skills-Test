@@ -16,34 +16,34 @@
 
       <nav>
         <ul>
-          <li>
+          <li class="nav-item">
             <div class="overview">
               <span class="overview-icon"></span>
               <a href="#" class="body-emphasized-14pt">Overview</a>
             </div>
           </li>
-          <li>
+          <li class="nav-item">
             <div class="patients">
               <span class="patients-icon"></span>
               <a href="#" class="body-emphasized-14pt">Patients</a>
             </div>
           </li>
-          <li>
+          <li class="nav-item">
             <div class="schedule">
-              <span class="schedule-icon"></span
-              ><a href="#" class="body-emphasized-14pt">Schedule</a>
+              <span class="schedule-icon"></span>
+              <a href="#" class="body-emphasized-14pt">Schedule</a>
             </div>
           </li>
-          <li>
+          <li class="nav-item">
             <div class="message">
-              <span class="message-icon"></span
-              ><a href="#" class="body-emphasized-14pt">Message</a>
+              <span class="message-icon"></span>
+              <a href="#" class="body-emphasized-14pt">Message</a>
             </div>
           </li>
-          <li>
+          <li class="nav-item">
             <div class="transactions">
-              <span class="transactions-icon"></span
-              ><a href="#" class="body-emphasized-14pt">Transactions</a>
+              <span class="transactions-icon"></span>
+              <a href="#" class="body-emphasized-14pt">Transactions</a>
             </div>
           </li>
         </ul>
@@ -90,11 +90,11 @@
       </aside>
       <section class="content-patient">
         <div class="diagnosis-history">
-          <h2 class="Card Title 24pt">Diagnosis History</h2>
+          <h2 class="card-title-24pt">Diagnosis History</h2>
           <div class="blood-pressure-chart__container">
             <div class="blood-pressure-chart__details">
               <div class="blood-pressure-chart__title-container">
-                <h3 class="Inner Card Title 18pt">Blood Pressure</h3>
+                <h3 class="inner-card-title-18pt">Blood Pressure</h3>
                 <select id="timeRange" class="body-regular-14">
                   <option value="6 months">Last 6 months</option>
                   <option value="1 year">Last year</option>
@@ -112,28 +112,29 @@
           </div>
         </div>
         <div class="diagnostic-list">
-          <h2 class="inner-card-title-18pt">Diagnostic List</h2>
+          <h2 class="card-title-24pt">Diagnostic List</h2>
           <table id="diagnostic-table">
             <!-- Diagnostics will be populated here -->
           </table>
         </div>
       </section>
-      <section class="sidebar-patient">
-        <div class="patient-info">
+      <section class="sidebar-selected-patient">
+        <div class="selected-patient-info">
           <img
-            id="profile-picture"
-            src="profile-pic.jpg"
+            src="assets/img/Layer2@2x.png"
             alt="Profile Picture"
+            class="selected-patient__profile-picture"
           />
-          <h2 id="patient-name" class="inner-card-title-18pt"></h2>
+          <h2 id="patient-name" class="inner-card-title-24pt"></h2>
           <p id="patient-dob" class="body-secondary-info-14pt"></p>
           <p id="patient-gender" class="body-secondary-info-14pt"></p>
           <p id="patient-phone" class="body-secondary-info-14pt"></p>
           <p id="emergency-contact" class="body-secondary-info-14pt"></p>
           <p id="insurance-type" class="body-secondary-info-14pt"></p>
+          <button class="show-all-info-button">Show All Information</button>
         </div>
         <div class="lab-results">
-          <h2 class="inner-card-title-18pt">Lab Results</h2>
+          <h2 class="card-title-24pt">Lab Results</h2>
           <ul id="lab-results-list">
             <!-- Lab results will be populated here -->
           </ul>
