@@ -83,6 +83,32 @@
   color: var(--unnamed-color-072635);
 }
 
+/* Custom styles for the scrollbar */
+/* These styles only affect WebKit browsers like Chrome and Safari */
+
+/* Track */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 100px;
+}
+
+/* Thumb (the scrollbar slider) */
+::-webkit-scrollbar-thumb {
+  background-color: #072635;
+  border-radius: 3px;
+  height: 100px;
+}
+
+/* Change scrollbar track appearance */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color of the track */
+}
+
+/* Change scrollbar appearance on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color change on hover */
+}
+
 /* -------------- CONTENT --------------*/
 
 body {
@@ -91,6 +117,7 @@ body {
   padding: 18px 18px 0px 18px;
   background-color: #ffffff;
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* Header styles */
@@ -302,17 +329,24 @@ main {
   margin-bottom: 56px;
 }
 
+/* Blood-pressure Chart */
+
 .blood-pressure-chart__container {
   margin-bottom: 20px;
+  margin-right: 21px;
+  padding: 10px;
   display: flex;
+  background-color: #f4f0fe;
+}
+
+.blood-pressure-chart__title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .blood-pressure-chart__details {
   margin-right: 20px;
-}
-
-.blood-pressure-chart__title-container {
-  align-items: baseline;
 }
 
 .blood-pressure-chart__title-container h3 {
@@ -321,6 +355,8 @@ main {
 
 #timeRange {
   border: none;
+  margin-right: 30px;
+  background-color: #f4f0fe;
 }
 
 #bloodPressure-chart {
@@ -348,23 +384,39 @@ main {
   margin-bottom: 10px;
 }
 
+/* Vitals */
+
 .vitals {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 50px;
 }
 
 .vital {
-  text-align: center;
   padding: 20px;
   background-color: #f9f9f9;
-  border-radius: 5px;
+  border-radius: 12px;
+  margin-right: 21px;
   flex: 1;
-  margin: 5px;
 }
 
-.vital img {
-  width: 50px;
-  height: 50px;
+.vitals-title {
+  font-size: 16px;
+}
+
+.vitals-value {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.vital:nth-child(1) {
+  background-color: #e0f3fa;
+}
+.vital:nth-child(2) {
+  background-color: #ffe6e9;
+}
+.vital:nth-child(3) {
+  background-color: #ffe6f1;
 }
 
 /* Patients */
@@ -372,18 +424,63 @@ main {
 .sidebar-patients {
   width: 367px;
   height: 1054px;
+  margin-left: 18px;
+  margin-right: 32px;
+  overflow-y: auto;
+  background-color: #ffffff;
 }
 
 .patients-title__container {
   display: flex;
   justify-content: space-between;
   margin-left: 20px;
-  margin-right: 72px;
+  margin-right: 20px;
 }
 
-.blood-pressure-chart__title-container {
+#patient-list {
+  padding: 0;
+}
+
+.patient-div {
+  display: flex;
+  align-items: center;
+}
+
+.patient-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.patient-info__patients {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-profile-picture {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.patient-item .body-secondary-info-14pt {
+  margin: 0;
+  padding: 0;
+}
+.patient-item .body-emphasized-14pt {
+  margin: 0;
+  padding: 0;
+}
+
+.more-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.highlighted-patient {
+  background-color: var(--activestate_bg_2);
 }
 
 /* Table styles for diagnostic list */
